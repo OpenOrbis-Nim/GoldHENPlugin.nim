@@ -1,0 +1,34 @@
+##
+##  GoldHEN Plugin SDK - a prx hook/patch sdk for Orbis OS
+##
+##  Credits
+##  - OSM <https://github.com/OSM-Made>
+##  - jocover <https://github.com/jocover>
+##  - bucanero <https://github.com/bucanero>
+##  - OpenOrbis Team <https://github.com/OpenOrbis>
+##  - SiSTRo <https://github.com/SiSTR0>
+##
+
+import
+  Detour, GoldHEN, Utilities, Syscall
+
+template STRINGIFY*(x: untyped): untyped =
+  astToStr(x)
+
+template STRINGIFY_DEEP*(x: untyped): untyped =
+  STRINGIFY(x)
+
+const
+  ORBIS_SYSMODULE_INTERNAL_SYS_CORE* = 0x80000004
+  ORBIS_SYSMODULE_INTERNAL_NETCTL* = 0x80000009
+  ORBIS_SYSMODULE_INTERNAL_HTTP* = 0x8000000A
+  ORBIS_SYSMODULE_INTERNAL_SSL* = 0x8000000B
+  ORBIS_SYSMODULE_INTERNAL_NP_COMMON* = 0x8000000C
+  ORBIS_SYSMODULE_INTERNAL_SYSTEM_SERVICE* = 0x80000010
+  ORBIS_SYSMODULE_INTERNAL_USER_SERVICE* = 0x80000011
+  ORBIS_SYSMODULE_INTERNAL_APPINSTUTIL* = 0x80000014
+  ORBIS_SYSMODULE_INTERNAL_NET* = 0x8000001C
+  ORBIS_SYSMODULE_INTERNAL_IPMI* = 0x8000001D
+  ORBIS_SYSMODULE_INTERNAL_VIDEO_OUT* = 0x80000022
+  ORBIS_SYSMODULE_INTERNAL_BGFT* = 0x8000002A
+  ORBIS_SYSMODULE_INTERNAL_PRECOMPILED_SHADERS* = 0x80000064
